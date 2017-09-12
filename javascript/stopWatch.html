@@ -1,0 +1,59 @@
+<html> 
+    <head> 
+        <title>stopwatch</title> 
+        <style type="text/css">
+            #txt{
+                background: green;
+                font-size: 75px;
+                width: 400px;
+                height: auto;
+                border: 5px solid red;
+                text-align: center
+            }
+        </style>
+    </head> 
+    <body onload="timedCount()">
+        <center> 
+                <div id="txt">
+                    <h1>00 : 00 : 00</h1>
+                </div>
+        </center> 
+    </body> 
+
+    <script type="text/javascript"> 
+        var tm=parseInt(prompt("Enter time in second")); 
+        var t=0 ; 
+        function timedCount() { 
+            tm=addZero(tm); 
+            document.getElementById('txt').innerHTML = " 00 : 00 : "+tm;
+            tm-=1;
+               if(tm<0) { 
+                    alert("time over") 
+                    stopTimeCount();
+                }
+           
+            if(tm<0){
+                var conf=confirm("Do you want to use again???")
+                if(conf==true){
+                    tm=parseInt(prompt(" Enter time in second "));
+                }else{ 
+                    alert("Thanks for Using!!!!");
+                    return;
+                }
+            }
+                            t=setTimeout(timedCount,999);
+        }
+         
+        function stopTimeCount() { 
+            clearTimeout(t); 
+        }
+        function addZero(tm){
+            console.log(tm);
+            if(tm<10){
+                return "0"+tm;
+            }
+        }
+    </script> 
+    
+</html>
+
