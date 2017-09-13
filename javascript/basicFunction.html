@@ -1,0 +1,107 @@
+<html>
+    <head>
+        <title>jellyfishtechnologies.com</title>
+        
+    </head>
+    <body>
+        
+        <h2><br>------ 1. Defalut function--------<br></h2>
+        
+        <div class="default_function">
+            <script type="text/javascript">
+            function sayhello(){
+                document.write("This is the Simple Function.<br>");
+            }
+            sayhello();
+            </script>
+        </div>
+        
+        
+   
+        <h2><br>------ 2. parameterize function--------<br></h2>
+        
+        <div class="parameterize_function">
+            <script type="text/javascript">     
+            function add(i, j, k){
+                var res=i+j+k;
+//                console.log("add ---->",res);
+//                alert("add ********* : "+res);
+                document.write("<br> Addition by parametrized function is : " +res);
+            }
+            add(10,20,30);
+            </script>
+        </div>
+            
+        
+    
+        
+        <h2><br>------ 3. Return function--------<br></h2>
+        
+        <div class="returnType_function">
+            <script type="text/javascript">     
+            function add(){
+                var a=5;
+                var b=7;
+                return (a+b);
+            }
+            var sum=add();
+            document.write("Addition by return type function is : "+sum   +" <br>")
+            </script>
+        </div>
+         
+     
+        
+        <h2><br>------ 4. paramerize and returntype function--------<br></h2>
+        
+        <div class="parametrize and returnType_function">
+            <script type="text/javascript">    
+            function addition(i, j){
+                return (i+j);
+            }
+            var a=parseInt(prompt("Enter first Number : "));
+            var b=parseInt(prompt("Enter second Number : "));
+            var result=addition(a,b);
+            document.write("<br>Addition of two number is (using perametrize and return type function) : "+result);
+            </script>
+        </div>
+            
+        
+
+        <h2><br>------ 5. alert function--------<br></h2>
+        
+        <div class="Alert_function">
+            <script type="text/javascript">  
+                alert("This is a Alert function");
+                document.write("That was Alert function")
+        </script>
+        </div>
+           
+        
+
+        <h2><br>------ 6. prompt function--------<br></h2>
+        
+        <div class="prompt_function">
+            <script type="text/javascript">    
+                var name=prompt("Enter Your Name : ");
+                document.write("<br>"+name+" is entered by prompt function");
+            </script>
+        </div>
+            
+    
+
+        <h2><br>------ 7. Confirm function--------<br></h2>
+        
+        <div class="confirm_function">
+            <script type="text/javascript">     
+                var con=confirm("This is Comfirm function.");
+                if(con==true){
+                    document.write("<br>You have clicked ok button.");
+                }
+                else{
+                    document.write("<br>You have clicked cencil button");
+                }
+            </script>
+        </div>
+        
+    </body>
+</html>
