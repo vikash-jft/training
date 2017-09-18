@@ -1,0 +1,121 @@
+<html>
+
+<head>
+    <title>Form Validation |</title>
+    <script>
+        // Simple for Loop 
+        for (var x = 1; x <= 100; x++) {
+            if (x % 2 == 0) {
+                document.write(x + " ");
+            }
+        }
+        document.write("<br><br>");
+
+
+        // The for...in loop is used to loop through an object's properties. 
+        for (var x in navigator) {
+            document.write(x + " ");
+        }
+        document.write("<br><br>");
+
+        // Using Labels to Control the Flow
+        document.write("Entering the Loop : ");
+        outerloop: //  OuterLoop is the name of the lable which has denote to the outerSide.
+            for (var r = 1; r <= 5; r++) {
+                document.write(" <br>");
+
+                innerLoop: //  InnerLoop is the name of the lable which has denoted to the inner Loop.
+                    for (var c = 1; c <= r; c++) {
+                        //if (c == 3) break outerloop;
+                        document.writeln(" " + r);
+                    }
+                    //document.writeln("<br>");
+            };
+
+
+
+
+
+
+
+        //  this is the exaple of the the Dom ( Document Object model), That programs tells us that how we implement
+        //  dom program example.
+        function myFunc() {
+            var ret = document.title;
+            alert("Document Title : " + ret);
+
+            var ret = document.URL;
+            alert("Document URL : " + ret);
+
+            var ret = document.forms[0];
+            alert("Document First Form : " + ret);
+
+            var ret = document.forms[0].elements[1];
+            alert("Second element : " + ret);
+        }
+        //-->
+
+
+
+
+
+
+
+
+        // That is the program to define how to implement form elements validation are given below :-
+
+        function validatate() {
+            if (document.myform.fname.value == "") {
+                alert("Enter Your Name : ");
+                document.myform.fname.focus();
+                return false;
+            } else {
+                var name = document.myform.fname.value;
+                //document.writeln(name + " length : " + name.length);
+                if (name.length < 3 || name.length > 15) {
+                    document.getElementById("label4All").innerHTML = "The given Length of the Name should not be less than 3 of greater than 15<br>";
+                    document.myform.fname.focus();
+                    return false;
+                }
+            }
+            if (document.myform.email.value == "") {
+                document.getElementById("label4All").innerHTML = "Please Enter your Email_id!!!<br>";
+                document.myform.email.focus();
+                return false;
+            }
+
+            var pin = parseInt(document.myform.pincode.value);
+            console.log(pin);
+            if (isNaN(pin) || pin.toString().length() != 6) {
+                document.getElementById("label4All").innerHTML = "Enter valid 6 digit Pincode!!!<br>";
+                document.myform.pincode.focus();
+                return false;
+            }
+            if (document.myform.country.value == "-1") {
+                document.getElementById("label4All").innerHTML = "Choose Your Country!!!<br>";
+                document.myform.pincode.focus();
+                return false;
+            }
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="#" name="myform" onsubmit="return (validatate());">
+        <label id="label4All" style="color: red"></label>
+        <input type="text" name="fname" min="3" max="15" placeholder="Enter Your name :* "><br><br>
+        <!-- <input type="email" name="email" placeholder="Enter your current Email_Id : * "><br><br>-->
+        <input type="text" name="pincode" placeholder="Enter Your Pincode : *"><br><br>
+        <select name="country"> 
+            <option value="-1" selected>Choose cuntry</option>
+            <option value="1">India</option>
+            <option value="2">pakistan</option> `
+            <option value="3"> China</option>
+            <option value="4">Bangladesh</option>
+        </select><br><br>
+        <input type="submit" value="submit">
+    </form>
+</body>
+
+</html>
