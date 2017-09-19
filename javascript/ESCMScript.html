@@ -1,0 +1,159 @@
+<html>
+
+<head>
+    <title>Jellyfishtechnologies.com</title>
+</head>
+
+<body>
+    <!-- Thats all program is based on the Es6 (EscmScript) and below program is tells that how can we use of " use strict " and more features in ESCMScript. -->
+
+    <script>
+        // Examples :-
+        "use strict";
+        // simple example of function using use strict keyword.
+        var newline = "<br>";
+        var getinput = () => 5.99;
+        document.writeln(typeof getinput); // output - function
+        document.write(newline);
+        document.writeln(getinput()); //  5.99
+        document.write(newline);
+
+
+        // Example :- Area of the circle
+        var area = r => 3.14 * r * r;
+        document.writeln(area(7)) //3.14*7*7=153.86
+        document.write(newline);
+
+
+        // Example :- find out the parameter of rectangle
+        var rect = (l, b) => 2 * (l + b);
+        document.writeln("Area of the rectange : " + rect(5, 7)); //24
+        document.write(newline);
+
+        //Example :- fing simpleInterest and Amount using function
+        var si = (p, r, t) => {
+            var si = p * r * t;
+            si /= 100;
+            return si;
+        }
+        document.writeln("Simple Interest = " + si(1000, 5, 3)); //150
+        document.write(newline);
+
+
+
+        // This is the simple way to printing any variable 
+        var name = "Rameshwar";
+        document.writeln("Your name is " + name);
+        document.write(newline);
+        // but this is the smart way to defaine any variable in ES6
+        document.writeln(`Your Name is ${name}`);
+        document.write(newline);
+
+
+        // class Keyword and create constructor are new concept define in ES6
+        class Person {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+        }
+        var st = new Person("Veresh", 25);
+        var st1 = new Person("Suresh", 50);
+        document.writeln("Name : " + st.name + "<br>Age :" + st.age);
+        document.write(newline);
+        document.writeln("Name : " + st1.name + "<br>Age :" + st1.age);
+        document.write(newline);
+
+
+        //that is the example of how to create function behalf of prototype 
+
+        class Shape {
+            constructor(l, b) {
+                this.l = l;
+                this.b = b;
+            }
+            area() {
+                return (this.l * this.b);
+            }
+        }
+        var rectange = new Shape(5, 7);
+        document.writeln("Area of Rectange : " + rectange.area());
+        document.write(newline);
+        // document.writeln("Area of traingle : " + traingle.area());
+
+
+
+        // Use of Inheritence in ES6
+        class Cuboid extends Shape {
+            constructor(l, b, h) {
+                super(l, b);
+                this.h = h;
+            }
+            display() {
+                return super.area() * this.h;
+            }
+        }
+
+        var c = new Cuboid(8, 5, 2);
+        document.writeln(c.display());
+
+
+
+        /* Person.prototype.eat = function() {
+            alert(this.name);
+        } */
+
+
+
+
+
+
+        // immutability also perform main roll in the Es6 so we can see imutability with Array and Object both in sequence wise.
+        // Array
+        var arr = [1, 2, 3];
+        console.log(arr);
+        var anotherArr = [...arr, 4]; // anotherArr denotes new memory representation . it will cantain first Array with concat another element.
+        console.log(arr); //After pussing any other element first Array will be not any changes. 
+        console.log(anotherArr);
+
+        //object 
+        var User = {
+            user: "Ram",
+            age: 25,
+            habbits: ["playing Cricket", "Reading Nobel"]
+        }
+        var anotherUser = User;
+        anotherUser.country = "India";
+        console.log(User); // user and anothoerUser are denoting both same memory
+        console.log(anotherUser); // so both  are changes if we will change any kind of changes in last Object.
+
+        //but in other way we can change to Object.assign() to make object to achive imutability.
+        var thirdUser = Object.assign([], User, {
+            age: 28,
+            sex: "Male"
+        });
+        console.log(User); // user and ThirdUser are denoting different memory represtation.
+        console.log('............', thirdUser); // so both  are changes if we will change any kind of changes in last Objet.
+
+
+        // but it is not woring on one step deft in object means it and not woring on array of the Object
+        var fourthUser = Object.assign([], User, {
+            age: 15,
+            sex: "female"
+        })
+        fourthUser.habbits.push('Dancing');
+        console.log(User); // that is updating in both User and FourthUser.
+        console.log(fourthUser);
+
+        // there be a sulution to remove like that problem that is, we have to use ' concreate method ' .
+        var fifthUser = Object.assign([], User, {
+            age: 10,
+            sex: "female"
+        });
+        fifthUser.habbits = fifthUser.habbits.concat("Singing");
+        console.log(User); // that is updating in only one in FourthUser. This is not allow to update who has created before.
+        console.log(fifthUser);
+    </script>
+</body>
+
+</html>
