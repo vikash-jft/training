@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <title>jellyfishTechnologies.com</title>
+</head>
+
+<body>
+    <script>
+        // This is allready features available in es5
+        // How to define default value when there will be not pass any kind of parameter by user in Functional parameter.
+        // For Example we have a simple function which contains a single parameter
+        function saySomething(msg) {
+            msg = msg || "Hello"; //That means if user not pass any argument in function then hello is assign as a default.
+            console.log(msg);
+        }
+        saySomething(); //There has been not pass any parameter or function need to one parameter then
+        // case it holds given default value thats why Answer is : Hello.
+        saySomething("Hi"); // if we pass argument then case this value will be assing that why Answer is : Hi
+
+        // and in Es6 How to define default value of parameter if user has not been given then case
+        // we define inline code that put the default value then case if user pass the its own parameter value then 
+        // that will be assign and display but in case User has not been assign any kind of parameters values then 
+        // its own default value will be assign who has allready given on the inline argument value.
+
+        function saySomething2(msg = "hello") {
+            console.log("*********", msg);
+        }
+        saySomething2(); // hello
+        saySomething2("hi"); // hi
+
+
+
+        //Scoping - Understanding of let and var
+        // Var 
+        (function() {
+            var x = 10; // function scope
+            if (x = 10) {
+                var x = 11; // Function scope
+            }
+            console.log("++++++++++", x) // 11;
+        }());
+
+        // let
+        (function() {
+            var x = 10; // function scope
+            if (x = 10) {
+                let x = 11; // Block scope
+            }
+            console.log("++++++++++", x) // 10;
+        }());
+
+        // const
+        function sayHello(name) {
+            //const msg = "Mr. ";
+            //msg = msg + name;
+            //console.log(msg); // invalid assignment to const `msg'
+        }
+        sayHello("Raj");
+
+        //Destructiong
+        var user = {
+            name: "Ram",
+            age: 25
+        }
+        var {
+            name,
+            age
+        } = user;
+        console.log(name);
+
+        // Arrow Function
+        console.log('*******************************');
+        // simple function
+        var foo = function() {
+                console.log('hi');
+            }
+            // Arrow function
+        var foo = () => {
+            console.log("hi");
+        }
+        foo();
+
+
+        // parameter and return type function {
+
+        var add = (a, b) =>
+            a + b;
+
+        var result = add(5, 8);
+        console.log(result) // 13
+
+        // Rest Parameter
+        function sortRestArgs(...args) {
+            var sortedArgs = args.sort();
+            return sortedArgs;
+        }
+
+        console.log(sortRestArgs(5, 3, 7, 1)); // shows 1, 3, 5, 7
+        document.write(sortRestArgs(5, 3, 7, 1));
+    </script>
+</body>
+
+</html>
