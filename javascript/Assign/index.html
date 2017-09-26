@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>jellyfishtechnologies.com</title>
+    <style>
+        #timer {
+            background: grey;
+            width: 100px;
+            height: 50px;
+            border: 1px solid red;
+            float: right;
+            margin-right: 25px;
+        }
+        
+        #timer h5 {
+            margin: 7px;
+            font-size: 25px;
+        }
+        
+        #tab {
+            width: 500px;
+            height: auto;
+            background: burlywood;
+        }
+    </style>
+</head>
+
+<body id="body">
+    <center>
+        <h3>List Of Persons</h3>
+        <div id="timer" onclick="timedCount()">
+            <h5 id="txt"> 0 0 </h5>
+        </div style="clear:all">
+        <p></p>
+        <div id="tab">
+            <table id="list" cellspacing="0px" cellpadding="30px" text-align="center">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>age</th>
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+                <tfoot id="tfoot">
+
+                </tfoot>
+            </table>
+        </div>
+        <input type="button" value="Add" onclick="clickbtn()">
+    </center>
+    <script src="myscript.js"></script>
+</body>
+
+</html>
