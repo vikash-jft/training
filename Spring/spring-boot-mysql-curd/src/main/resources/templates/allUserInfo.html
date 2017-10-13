@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>User Information Page |</title>
+</head>
+<body>
+<br/><br/>
+<center>
+<h1>All User Information Here !!!!!!</h1>
+
+<table cellpadding="2" cellspacing="2" border="2">
+    <tr>
+        <th>Id</th>
+        <th>First Name</th>
+        <th>Second Name</th>
+        <th>Salary</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    <tr th:each="user :${alluserinfo} ">
+        <td th:text="${user.id}"></td>
+        <td th:text="${user.fname}"></td>
+        <td th:text="${user.lname}"></td>
+        <td th:text="${user.sal}"></td>
+        <td ><a href="#" th:href="@{'/find/'+${user.id}}">Edit</a> </td>
+        <td ><a href="#" th:href="@{'/delete/'+${user.id}}">Remove</a> </td>
+
+    </tr>
+</table>
+    <br/>
+<a href="createUser.html">Add User</a>
+</center>
+
+</body>
+</html>

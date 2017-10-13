@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Create User Page |</title>
+</head>
+<body>
+<center>
+    <br/><br/><br/>
+
+    <h2>Create User Page</h2>
+    <form action="#" th:action="@{/createUser}" th:object="${obj}" method="post">
+        <table cellspacing="2" cellpadding="2" style=" text-align:center">
+            <tr>
+                <th>User Id : </th>
+                <td><input type="text" th:field="*{id}" placeholder="Enter id : " /></td>
+            </tr>
+            <tr>
+                <th>First Name : </th>
+                <td><input type="text" th:field="*{fname}" placeholder="Enter First Name : " /></td>
+            </tr>
+            <tr>
+                <th>Second Name</th>
+                <td><input type="text" th:field="*{lname}" placeholder="Enter Last Name : " /></td>
+            </tr>
+            <tr>
+                <th>Salary</th>
+                <td><input type="text" th:field="*{sal}" placeholder="Enter Salary : " /></td>
+            </tr>
+        </table>
+        <input type="submit" value="Submit"/>
+    </form>
+    <br/><br/><br/>
+<form action="#" th:action="@{/findAll}" method="post">
+    <input type="submit" value="View All User"/>
+</form>
+</center>
+
+</body>
+</html>
